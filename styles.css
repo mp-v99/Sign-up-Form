@@ -103,24 +103,26 @@ input {
 }
 
 form>fieldset {
-    background: #ffffff;
+    background: #f7f7f7e0;
     border: none;
-    box-shadow: 0px 4px 4px 0px #c2c2c2;
+    box-shadow: 0px 4px 4px 0px #d8d8d8;
 
     position: relative;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    row-gap: 28px;
 
-    height: 75%;
+    height: 63%;
 
+    padding-bottom: 40px;
 }
 
 fieldset>legend {
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 2%;
 
     font-size: 30px;
@@ -138,7 +140,7 @@ fieldset>.form-row {
 }
 
 .form-row>label>p {
-    font-size: 9px;
+    font-size: 16px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6);
 
@@ -146,21 +148,34 @@ fieldset>.form-row {
 }
 
 .form-row input {
-    border: 1px solid rgb(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.199);
     border-radius: 5px;
 
-    padding-left: 5px;
+    padding-left: 12px;
 
-    width: 300px;
+    width: 400px;
+    height: 37px;
+
+    font-size: 20px;
+    background: #f8f8f8;
+    color: #596D48;
+    font-weight: 600;
+}
+
+.form-row input[type="password"]:invalid {
+    outline: none;
+    border: 1px solid #ff3737;
+}
+
+.form-row input[type="password"]:focus {
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    outline: 1px solid #379eff;
+    box-shadow: 0px 1px 2px 0px #379eff;
 }
 
 .form-row input:focus {
     outline: 1px solid #379eff;
     box-shadow: 0px 1px 2px 0px #379eff;
-}
-
-.form-row input[type="password"]:invalid {
-    outline: 1px solid #ff3737;
 }
 
 /* Logo & Sidebar Styling */
@@ -213,4 +228,43 @@ fieldset>.form-row {
 
 #logo-footer a {
     color: #dfdfdf;
+}
+
+/* Form footer */
+
+.form-footer {
+    height: 30%;
+    position: relative;
+}
+
+.form-footer>button {
+    position: absolute;
+    top: 18%;
+    left: 3%;
+
+    height: 50px;
+    width: 230px;
+
+    background: #596D48;
+    color: #efefef;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    border-radius: 9px;
+}
+
+.form-footer>p {
+    font-size: 17px;
+
+    position: absolute;
+
+    top: 60%;
+    left: 3%;
+}
+
+.form-footer>p>a {
+    text-decoration: none;
+    color: #596D48;
+    font-weight: bold;
 }
