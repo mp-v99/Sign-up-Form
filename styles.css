@@ -254,6 +254,14 @@ fieldset>.form-row {
     border-radius: 9px;
 }
 
+.form-footer>button:hover {
+    transform: scale(1.02);
+}
+
+.form-footer>button:active {
+    transform: scale(1);
+}
+
 .form-footer>p {
     font-size: 17px;
 
