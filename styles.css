@@ -1,114 +1,142 @@
-/* max_off_the_code */
+    /* max_off_the_code */
 
-@font-face {
-    font-family: "Norse-Font";
-    src: url(font-family/norse-font.otf);
-    font-weight: normal;
-    font-style: normal;
-}
-/* use a more-intuitive box-sizing model */
-/*  remove default margin */
+    @font-face {
+        font-family: "Norse-Font";
+        src: url(font-family/norse-font.otf);
+        font-weight: normal;
+        font-style: normal;
+    }
+    /* use a more-intuitive box-sizing model */
+    /*  remove default margin */
 
-*, *::before, *::after {
- box-sizing: border-box;
- margin: 0;
-}
+    *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    }
 
-/* enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
- html {
-   interpolate-size: allow-keywords;
- }
-}
+    /* enable keyword animations */
+    @media (prefers-reduced-motion: no-preference) {
+    html {
+    interpolate-size: allow-keywords;
+    }
+    }
 
-body {
- /* add accessible line-height */
- line-height: 1.5;
- /* improve text rendering */
- -webkit-font-smoothing: antialiased;
- height: 100vh;
- width: 100vw;
- display: flex;
- font-family: "Helvetica", "Arial", sans-serif;
-}
-/* improve media defaults */
-img, picture, video, canvas, svg {
- display: block;
- max-width: 100%;
-}
-/* inherit fonts for form controls */
-input, button, textarea, select {
- font: inherit;
-}
-/* avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
- overflow-wrap: break-word;
-}
-/* improve line wrapping */
-p {
- text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
- text-wrap: balance;
-}
+    body {
+        position: relative;
+        /* add accessible line-height */
+        line-height: 1.5;
+        /* improve text rendering */
+        -webkit-font-smoothing: antialiased;
 
-/* off_the_button_styles */
+        height: 2200px;
+        width: 100%;
+        min-width: 250px;
 
-button, 
-input {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
 
-/* Form Side */
+        display: flex;
+        flex-direction: column;
+
+        font-family: "Helvetica", "Arial", sans-serif;
+
+
+        background-image: url(images/background_image.jpg);
+        background-position:right;
+        background-size: cover;
+    }
+
+    html, body {  
+        /* Scrolling styles */
+        overflow: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE & Edge */
+    }
+  
+    /* Webkit-based scrollbars (Chrome, Safari, Opera) */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+    display: none;
+    }
+  
+    /* improve media defaults */
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+    }
+    /* inherit fonts for form controls */
+    input, button, textarea, select {
+        font: inherit;
+    }
+    /* avoid text overflows */
+    p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+    }
+    /* improve line wrapping */
+    p {
+        text-wrap: pretty;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+
+    /* off_the_button_styles */
+
+    button, 
+    input {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+/* Form: */
 
 #form-container {
-    width: 94%;
-    min-width: 1000px;
-    height: 100%;
-    min-height: 932px;
-    background: #efefef;
+    height: 2000px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
-/* Form Header Styling */
+fieldset>legend {
+    position: absolute;
+    top: 3%;
+    left: 8%;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Form Header: */
 
 .form-header {
     height: 36%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 
-    position: relative;
+    background-color: hsl(0, 0%, 94%);
 }
 
 .form-header>p {
-    position: absolute;
-
-    top: 39%;
-    left: 2%;
-
     font-size: 18px;
     font-weight: bold;
 
-    width: 42%;
+    width: 90%;
 }
 
-/* Form Styling */
-
-
-#form-container>form {
-    height: 60%;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 form>fieldset {
-    background: #f7f7f7e0;
+    background-color: #f7f7f7;
+
     border: none;
-    box-shadow: 0px 4px 4px 0px #d8d8d8;
 
     position: relative;
 
@@ -116,30 +144,29 @@ form>fieldset {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    row-gap: 28px;
 
-    height: 63%;
+    height: 800px;
+    width: 100%;
 
-    padding-bottom: 40px;
+    padding-bottom: 100px;
 }
 
-fieldset>legend {
-    position: absolute;
-    top: 3%;
-    left: 2%;
 
-    font-size: 30px;
-    font-weight: bold;
+form>.form-footer {
+    background-color: hsl(0, 0%, 94%);
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-
-/* Form inputs */
 
 fieldset>.form-row {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    column-gap: 5rem;
-
-    width: 98%;
+    row-gap: 10px;
 }
 
 .form-row>label>p {
@@ -156,7 +183,7 @@ fieldset>.form-row {
 
     padding-left: 12px;
 
-    width: 400px;
+    width: 350px;
     height: 37px;
 
     font-size: 20px;
@@ -171,82 +198,19 @@ fieldset>.form-row {
 }
 
 .form-row input[type="password"]:focus {
-    border: 1px solid rgba(0, 0, 0, 0.199);
+    border: none;
     outline: 1px solid #379eff;
     box-shadow: 0px 1px 2px 0px #379eff;
 }
 
 .form-row input:focus {
     outline: 1px solid #379eff;
+    border: none;
     box-shadow: 0px 1px 2px 0px #379eff;
 }
 
-/* Logo & Sidebar Styling */
-
-#logo-container {
-    width: 30%;
-    min-width: 500px;
-    max-width: 500px;
-    height: 100%;
-    min-height: 932px;
-    position: relative;
-
-    background-image: url(images/background_image.jpg);
-    background-size: cover;
-    background-position: center;
-
-    color: #dfdfdf;
-}
-
-#logo-card {
-    position: absolute;
-    top: 20%;
-
-    width: 100%;
-    height: 150px;
-
-    background-color: rgba(0, 0, 0, 0.5);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 0.5rem;
-
-    font-family: "Norse-Font";
-    font-size: 4rem;
-    font-weight: none;
-}
-
-#logo-footer {
-    position: absolute;
-    bottom: 0;
-
-    width: 100%;
-    height: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 12px;
-}
-
-#logo-footer a {
-    color: #dfdfdf;
-}
-
-/* Form footer */
-
-.form-footer {
-    height: 30%;
-    position: relative;
-}
 
 .form-footer>button {
-    position: absolute;
-    top: 18%;
-    left: 3%;
-
     height: 50px;
     width: 230px;
 
@@ -259,25 +223,317 @@ fieldset>.form-row {
     border-radius: 9px;
 }
 
-.form-footer>button:hover {
-    transform: scale(1.02);
-}
-
-.form-footer>button:active {
-    transform: scale(1);
-}
-
 .form-footer>p {
-    font-size: 17px;
-
-    position: absolute;
-
-    top: 60%;
-    left: 3%;
+    font-size: 8px;
 }
 
 .form-footer>p>a {
     text-decoration: none;
     color: #596D48;
     font-weight: bold;
+}   
+
+/* Side bar Disappear*/
+
+#logo-container {
+    width: 100%;
+ 
+    min-width: 250px;
+    height: 300px;
+
+    color: #dfdfdf;
+
+    display: flex;
+    align-items: center;
+    }
+
+    #logo-card {
+        width: 100%;
+        height: 150px;
+
+        background-color: rgba(0, 0, 0, 0.5);
+
+        flex: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0.5rem;
+
+        font-family: "Norse-Font";
+        font-size: 4rem;
+        font-weight: none;
+    }
+
+    #logo-footer {
+        bottom: 0;
+        position: absolute;
+
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 12px;
+        background-color: transparent;
+    }
+
+    #logo-footer a {
+        color: #dfdfdf;
+    }
+
+
+@media only screen and (min-width: 500px) {
+
+    body {
+        /* add accessible line-height */
+        line-height: 1.5;
+        /* improve text rendering */
+        -webkit-font-smoothing: antialiased;
+       
+        height: 100vh;
+        width: 100vw;
+    
+       
+        display: flex;
+        flex-direction: row;
+       
+        font-family: "Helvetica", "Arial", sans-serif;
+
+        background-image: none;
+       }
+
+    #form-container {
+        width: 100%;
+        min-width: 1420px;
+        height: 100%;
+        min-height: 932px;
+        padding: 0%;
+
+        display: flex;
+        row-gap: 0px;
+        background-color: hsl(0, 0%, 94%);
+    }
+
+    /* Form Styling */
+
+
+    #form-container>form {
+        height: 60%;
+        width: 100%;
+        background-color: hsl(0, 0%, 94%);
+    }
+
+    form>fieldset {
+        background: #f7f7f7e0;
+        border: none;
+        box-shadow: 0px 4px 4px 0px #d8d8d8;
+
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        row-gap: 28px;
+
+        height: 63%;
+        width: 100%;
+
+        padding-bottom: 40px;
+    }
+
+    fieldset>legend {
+        position: absolute;
+        top: 3%;
+        left: 2%;
+
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    /* Form inputs */
+
+    fieldset>.form-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 5rem;
+     
+        padding-left: 1rem;
+
+        width: 100%;
+    }
+
+    .form-row>label>p {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.6);
+
+        cursor: pointer;
+    }
+
+    .form-row input {
+        border: 1px solid rgba(0, 0, 0, 0.199);
+        border-radius: 5px;
+
+        padding-left: 12px;
+
+        width: 400px;
+        height: 37px;
+
+        font-size: 20px;
+        background: #f8f8f8;
+        color: #596D48;
+        font-weight: 600;
+    }
+
+    .form-row input[type="password"]:invalid {
+        outline: none;
+        border: 1px solid #ff3737;
+    }
+
+    .form-row input[type="password"]:focus {
+        border: none;
+        outline: 1px solid #379eff;
+        box-shadow: 0px 1px 2px 0px #379eff;
+    }
+
+    .form-row input:focus {
+        outline: 1px solid #379eff;
+        box-shadow: 0px 1px 2px 0px #379eff;
+    }
+
+    /* Logo & Sidebar Styling */
+
+    #logo-container {
+        width: 30%;
+        min-width: 500px;
+        max-width: 500px;
+        height: 100%;
+        min-height: 932px;
+        position: relative;
+
+        background-image: url(images/background_image.jpg);
+        background-size: cover;
+        background-position: center;
+
+        color: #dfdfdf;
+    }
+
+    #logo-card {
+        position: absolute;
+        top: 20%;
+
+        width: 100%;
+        height: 150px;
+
+        background-color: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0.5rem;
+
+        font-family: "Norse-Font";
+        font-size: 4rem;
+        font-weight: none;
+    }
+
+    #logo-footer {
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 12px;
+        background-color: transparent;
+    }
+
+    #logo-footer a {
+        color: #dfdfdf;
+    }
+
+    /* Form footer */
+
+    .form-footer {
+        height: 43.5%;        
+        position: relative;
+        display: none;
+        background-color: transparent;
+    }
+
+    .form-footer>button {
+        position: absolute;
+        top: 18%;
+        left: 3%;
+
+        height: 50px;
+        width: 230px;
+
+        background: #596D48;
+        color: #efefef;
+
+        font-size: 17px;
+        font-weight: bold;
+
+        border-radius: 9px;
+    }
+
+    /* Button Interactions */
+
+    .form-footer>button:hover {
+        transform: scale(1.02);
+    }
+
+    .form-footer>button:active {
+        transform: scale(1);
+    }
+
+    .form-footer>p {
+        font-size: 17px;
+
+        position: absolute;
+
+        top: 60%;
+        left: 3%;
+    }
+
+    .form-footer>p>a {
+        text-decoration: none;
+        color: #596D48;
+        font-weight: bold;
+    }   
+    /* Form Header Styling */
+
+    .form-header {
+        height: 36%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        position: relative;
+    }
+
+    .form-header>p {
+        position: absolute;
+
+        top: 39%;
+        left: 2%;
+
+        font-size: 18px;
+        font-weight: bold;
+
+        width: 42%;
+    }
 }
